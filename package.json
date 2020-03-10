@@ -1,0 +1,14 @@
+{
+  "name": "cypressio",
+  "version": "1.0.0",
+  "description": "Cypress IO tests",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "AlexART",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^4.1.0"
+  }
+}

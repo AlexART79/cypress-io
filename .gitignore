@@ -1,0 +1,14 @@
+# ignore temporary folder (with generated allure results)
+**/tmp
+
+# ignore logs
+*.log
+
+#ignore nodemodules
+node_modules/
+
+# ignore recorded videos
+cypress/videos/
+
+# ignore captured screenshots
+cypress/screenshots/
