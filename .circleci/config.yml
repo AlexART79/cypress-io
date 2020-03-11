@@ -5,4 +5,24 @@ orbs:
 workflows:
   build:
     jobs:
-      - cypress/run
+      - cypress/install
+      - cypress/run:
+          name: firefox
+          requires:
+            - cypress/install
+          executor: cypress/node12.13.0-chrome80-ff74
+          record: true
+          browser: firefox
+          group: firefox
+      - cypress/run:
+          name: Chrome
+          requires:
+            - cypress/install
+          executor: cypress/node12.13.0-chrome80-ff74
+          record: true
+          browser: chrome
+          group: chrome
+      
+      - store_artifacts:
+          path: cypress/videos
+          path: cypress/screenshots
