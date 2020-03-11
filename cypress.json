@@ -1,7 +1,6 @@
 {
-    "viewportWidth": 1600,
-    "viewportHeight": 900,
-
-    "integrationFolder": "cypress/tests"
-      
+  "viewportWidth": 1600,
+  "viewportHeight": 900,
+  "integrationFolder": "cypress/tests",
+  "projectId": "94ew3u"
 }
