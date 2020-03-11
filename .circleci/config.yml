@@ -1,28 +1,9 @@
 version: 2.1
+
 orbs:
-  cypress: cypress-io/cypress@1
+  cypress: cypress-io/cypress@1.1.0
+
 workflows:
   build:
     jobs:
-      - cypress/install
-      - cypress/run:
-          name: Chrome
-          requires:
-            - cypress/install
-          executor: cypress/browsers-chrome73-ff68
-          start: npm start
-          wait-on: http://localhost:3000
-          record: true
-          group: chrome
-          browser: chrome
-      - cypress/run:
-          name: Firefox
-          requires:
-            - cypress/install
-          executor: cypress/browsers-chrome73-ff68
-          start: npm start
-          wait-on: http://localhost:3000
-          record: true
-          group: firefox-critical-path
-          browser: firefox
-          spec: "cypress/integration/signup.spec.js,cypress/integration/login.spec.js"
+      - cypress/run
