@@ -12,7 +12,7 @@ class ReactAutocomplete extends Element {
     }
 
     get list() {
-        return this.element.find('.p-autocomplete-panel');
+        return this.element.find('ul.p-autocomplete-items');
     }
 
     get button() {
@@ -20,21 +20,21 @@ class ReactAutocomplete extends Element {
     }
 
     get value() {
-        console.log('Get autocomplete value');
-        // return this.input.invoke('val'); // - alternative command to get value
-        return this.input.then( el => el.val() );
+        cy.log('Get autocomplete value');        
+        return this.input.then( el => el.val() ); // return this.input.invoke('val'); // - alternative command to get value
     }
 
-    get isExpanded() {
+    isExpanded() {
+        return this.list.should('be.visible');        
     }
 
     type(text) {
-        console.log('Type text into autocomplete: ' + text);
+        cy.log('Type text into autocomplete: ' + text);
         return this.input.type(text);
     }
 
     select(val) {
-        console.log('Select value from the list: ' + val);
+        cy.log('Select value from the list: ' + val);
         return this.list.contains(val).click();        
     }
 

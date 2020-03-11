@@ -12,6 +12,10 @@ class Element {
     get text() {
         return this.element.then( e => e.text() );        
     }
+
+    get value() {
+        return this.element.then( e => e.val() );        
+    }
 }
 
 
