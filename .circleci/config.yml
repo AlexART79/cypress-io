@@ -25,4 +25,3 @@ workflows:
       
       - store_artifacts:
           path: cypress/videos
-          path: cypress/screenshots
