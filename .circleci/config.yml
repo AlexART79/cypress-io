@@ -3,11 +3,6 @@ version: 2.1
 orbs:
   cypress: cypress-io/cypress@1.17.1
 
-jobs:
-  build:
-    environment:
-      CYPRESS_RECORD_KEY: 0e47833d-a73f-4f3d-a6d8-ab2f26a77645
-
 workflows:
   build:    
     jobs:
@@ -17,7 +12,6 @@ workflows:
           requires:
             - cypress/install
           executor: cypress/browsers-chrome73-ff68
-          record: true
           browser: firefox
           group: firefox
           store_artifacts: true
@@ -26,7 +20,6 @@ workflows:
           requires:
             - cypress/install
           executor: cypress/browsers-chrome73-ff68
-          record: true
           browser: chrome
           group: chrome
           store_artifacts: true
