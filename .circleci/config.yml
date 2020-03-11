@@ -8,6 +8,9 @@ workflows:
     jobs:
       - cypress/install
       - cypress/run:
+          pre-steps:
+            - run: |
+                echo 'export CYPRESS_RECORD_KEY=$(cat 0e47833d-a73f-4f3d-a6d8-ab2f26a77645)' >> $BASH_ENV
           name: firefox
           requires:
             - cypress/install
@@ -16,6 +19,9 @@ workflows:
           group: firefox
           store_artifacts: true
       - cypress/run:
+          pre-steps:
+            - run: |
+                echo 'export CYPRESS_RECORD_KEY=$(cat 0e47833d-a73f-4f3d-a6d8-ab2f26a77645)' >> $BASH_ENV
           name: Chrome
           requires:
             - cypress/install
