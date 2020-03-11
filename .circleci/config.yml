@@ -14,8 +14,8 @@ workflows:
           executor: cypress/browsers-chrome73-ff68
           browser: firefox
           group: firefox
-          store_artifacts: true
-      - cypress/run:
+          store_artifacts: true          
+      - cypress/run:          
           name: Chrome
           requires:
             - cypress/install

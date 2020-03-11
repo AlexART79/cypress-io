@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/cypress run --browser chrome",
-    "record_test": "./node_modules/.bin/cypress run --browser chrome --record --key 0e47833d-a73f-4f3d-a6d8-ab2f26a77645"    
+    "record_test": "./node_modules/.bin/cypress run --browser chrome --record --key 0e47833d-a73f-4f3d-a6d8-ab2f26a77645"
   },
   "author": "AlexART",
   "license": "ISC",
