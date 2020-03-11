@@ -24,6 +24,9 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 
-Cypress.Commands.add('sleep', (ms) => {
-    return new Promise(resolve => setTimeout(resolve, ms));
-});
+/// <reference types="cypress" />
+
+// This is not required - there is cy.wait(time) command...
+// Cypress.Commands.add('sleep', (ms) => {
+//     return new Promise(resolve => setTimeout(resolve, ms));
+// });

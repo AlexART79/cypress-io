@@ -1,16 +1,17 @@
+/// <reference types="cypress" />
+
+const { BasePage } = require("./BasePage");
 const { ReactAutocomplete } = require("./Elements/ReactAutocomplete");
 
-class AutocompletePage {
+
+class AutocompletePage extends BasePage {
     constructor() {
-        this.url = 'https://www.primefaces.org/primereact/showcase/#/';
+        super('https://www.primefaces.org/primereact/showcase/#/')
     }
 
     open() {
-        console.log('Open URL: ' + this.url);
-        cy.visit(this.url);
-        cy.get('.layout-sidebar').within(() => {
-            cy.contains('AutoComplete').click();
-        });
+        super.open();        
+        cy.get('.layout-sidebar').contains('AutoComplete').click();        
     }
 
     get basicAc() {

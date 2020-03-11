@@ -1,3 +1,5 @@
+/// <reference types="cypress" />
+
 const { Element } = require("./Element");
 
 class ReactAutocomplete extends Element {
@@ -6,20 +8,21 @@ class ReactAutocomplete extends Element {
     }
     
     get input() {
-        return this.Element.find('input');
+        return this.element.find('input');
     }
 
     get list() {
-        return this.Element.find('.p-autocomplete-items');
+        return this.element.find('.p-autocomplete-panel');
     }
 
     get button() {
-        return this.Element.find('button');
+        return this.element.find('button');
     }
 
     get value() {
         console.log('Get autocomplete value');
-        return this.input.invoke('val');
+        // return this.input.invoke('val'); // - alternative command to get value
+        return this.input.then( el => el.val() );
     }
 
     get isExpanded() {
@@ -32,19 +35,15 @@ class ReactAutocomplete extends Element {
 
     select(val) {
         console.log('Select value from the list: ' + val);
-        return this.list.within(() => {
-            cy.contains(val).click();
-        });
+        return this.list.contains(val).click();        
     }
 
     expand() {
-        return this.button.click().then(() => {
-            return (async () => {
-                await cy.sleep(1000);
-            })().then(() => {
-                return this.button.click();
-            });
-        });
+        return this.button.click().wait(1000).click();                
+    }
+
+    collapse() {
+        return this.input.type('{esc}');
     }
 }
 
