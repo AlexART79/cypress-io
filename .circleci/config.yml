@@ -10,7 +10,7 @@ workflows:
           name: firefox
           requires:
             - cypress/install
-          executor: cypress/browsers:node12.8.1-chrome80-ff72
+          executor: cypress/browsers-chrome73-ff68
           record: true
           browser: firefox
           group: firefox
@@ -18,7 +18,7 @@ workflows:
           name: Chrome
           requires:
             - cypress/install
-          executor: cypress/browsers:node12.8.1-chrome80-ff72
+          executor: cypress/browsers-chrome73-ff68
           record: true
           browser: chrome
           group: chrome
