@@ -17,7 +17,8 @@ workflows:
           executor: cypress/browsers-chrome73-ff68
           browser: firefox
           group: firefox
-          store_artifacts: true
+          record: true
+          store_artifacts: true          
       - cypress/run:
           pre-steps:
             - run: |
@@ -28,4 +29,5 @@ workflows:
           executor: cypress/browsers-chrome73-ff68
           browser: chrome
           group: chrome
+          record: true
           store_artifacts: true
