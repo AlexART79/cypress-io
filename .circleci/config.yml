@@ -4,6 +4,8 @@ orbs:
   cypress: cypress-io/cypress@1.17.1
 workflows:
   build:
+    environment:
+      CYPRESS_RECORD_KEY: 0e47833d-a73f-4f3d-a6d8-ab2f26a77645
     jobs:
       - cypress/install
       - cypress/run:
@@ -14,6 +16,7 @@ workflows:
           record: true
           browser: firefox
           group: firefox
+          store_artifacts: true
       - cypress/run:
           name: Chrome
           requires:
@@ -22,3 +25,4 @@ workflows:
           record: true
           browser: chrome
           group: chrome
+          store_artifacts: true
