@@ -18,7 +18,8 @@ describe('AutoComplete control tests', () => {
     it('Basic autocomplte type and select test', () => {                
         let ac = acpage.basicAc;
 
-        ac.type('Uni');        
+        ac.type('Uni');  
+        cy.wait(1000);
         ac.list.should('be.visible');;
                     
         ac.select('United States');       
