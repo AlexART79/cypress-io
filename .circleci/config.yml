@@ -2,10 +2,14 @@ version: 2.1
 
 orbs:
   cypress: cypress-io/cypress@1.17.1
-workflows:
+
+jobs:
   build:
     environment:
       CYPRESS_RECORD_KEY: 0e47833d-a73f-4f3d-a6d8-ab2f26a77645
+
+workflows:
+  build:    
     jobs:
       - cypress/install
       - cypress/run:
